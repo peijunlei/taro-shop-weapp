@@ -1,0 +1,37 @@
+.t-pull-down-trigger {
+  overflow: hidden;
+  max-height: 100vh;
+  .toTop{
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    padding: 20px;
+    background-color: orange;
+  }
+}
+.t-pull-down-refresh__track {
+  position: relative;
+}
+.t-pull-down-refresh__track--loosing {
+  transition: transform ease 0.24s;
+}
+.tips {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 24px;
+  top: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  .loading,
+  .text {
+  }
+}
+
+.t-pull-down-refresh__wrap {
+  position: relative;
+}

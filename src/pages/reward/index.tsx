@@ -5,7 +5,7 @@ import './index.scss'
 export default function Index(){
   return (
     <View>
-      主页
+      奖励中心
     </View>
   )
 }
