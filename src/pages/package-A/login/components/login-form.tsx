@@ -11,6 +11,7 @@ import useUserInfo from '@/store/useUserInfo';
 import useLoginStore from '../useLoginStore';
 import { LoginWithAccount } from '../webapi';
 import './login-form.scss';
+import { shallow } from 'zustand/shallow';
 
 export default function LoginForm() {
   const { phone, password, setState, pcLogo, showPassword } = useLoginStore(state => ({
@@ -19,7 +20,7 @@ export default function LoginForm() {
     setState: state.setState,
     pcLogo: state.pcLogo,
     showPassword: state.showPassword
-  }))
+  }),shallow)
   const setUserInfo = useUserInfo(state => state.setUserInfo)
   async function handleSubmmit() {
     const result = await LoginWithAccount({ "customerAccount": "SDVqRS9LM01rWjhYaEdERHJKMHplN3RtdUhsTldySDJZcnAreUVBVlJoNHRFYjJDSG5XZDY4YW10N0J4VHB0TDExZGNmNnRrbmE5elRRMTQ0amtxcTRpLzVhb2FtUWNKS2JZZnRmdlFRZ1Y0VHdNWlFmZ1RkVmp0eUhacTBqWW1CU2xvVTRObUZ6dWF5RkJnQkhZQURRb2s4aWhaU0F5Wkprc1BlU1FWQ0lVPQ==", "customerPassword": "UTNBQkRLUE9ZaFNaOXFnZGlKTW5kR0hvQmx2R2R3S1dIUnJtVCtDWmdMcnYrTE53Z1ppU0tlRFVJUlpxK2NtbEtQMGRndnk2c3FveGs1anpPM3JicjlseWtoak9sWTJqQ2RYKzZ3STRnOVE5a29iRmhRU0pzNUZaRjhOSkdQcVBkYnc4dVIwVnhDMWVreGorcEhEN3J4OXJkbE95ellSQ0J2SEhGKzdEZmNrPQ==", "validate": "" });
