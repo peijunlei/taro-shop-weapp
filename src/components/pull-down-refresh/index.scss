@@ -1,4 +1,4 @@
-.t-pull-down-trigger {
+.pull-down-trigger {
   overflow: hidden;
   max-height: 100vh;
   .toTop{
@@ -9,29 +9,22 @@
     background-color: orange;
   }
 }
-.t-pull-down-refresh__track {
+.pull-down-refresh__track {
   position: relative;
 }
-.t-pull-down-refresh__track--loosing {
+.pull-down-refresh__track__loosing {
   transition: transform ease 0.24s;
 }
 .tips {
   position: absolute;
-  color: rgba(0, 0, 0, 0.4);
+  color: #999;
   font-size: 24px;
+  background-color: #fff;
   top: 0;
   width: 100%;
   transform: translateY(-100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  overflow: hidden;
-  .loading,
-  .text {
-  }
 }
 
-.t-pull-down-refresh__wrap {
-  position: relative;
-}
