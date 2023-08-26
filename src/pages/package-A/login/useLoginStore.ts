@@ -5,16 +5,23 @@ interface LoginState {
   password: string;
   pcLogo: string;
   showPassword: boolean;
-  setState: (val: { key: string, value?: any }) => void;
 }
-
-const useLoginStore = createWithEqualityFn<LoginState>()(
+interface LoginActions {
+  setState: (updates: Partial<LoginState>) => void;
+}
+const defaultState: LoginState = {
+  showPassword: false,
+  phone: '177246833446',
+  password: 'Aa123456@',
+  pcLogo: '',
+};
+const useLoginStore = createWithEqualityFn<LoginState & LoginActions>()(
   (set) => ({
-    showPassword: false,
-    phone: '177246833446',
-    password: 'Aa123456@',
-    pcLogo: '',
-    setState: ({ key, value }) => set({ [key]: value }),
+    ...defaultState,
+    setState: (updates) => set((prev) => ({
+      ...prev,
+      ...updates,
+    })),
   }),
   Object.is
 )

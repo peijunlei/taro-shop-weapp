@@ -26,8 +26,7 @@ export default function Login() {
   async function init() {
     findBaseConfig().then(res => {
       setState({
-        key: 'pcLogo',
-        value: res.pcLogo && JSON.parse(res.pcLogo)[0].url
+        pcLogo: res.pcLogo && JSON.parse(res.pcLogo)[0].url
       })
     })
   }

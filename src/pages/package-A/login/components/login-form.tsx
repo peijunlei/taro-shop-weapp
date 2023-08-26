@@ -47,8 +47,7 @@ export default function LoginForm() {
             placeholder='请输入您的手机号'
             onInput={(e) => {
               setState({
-                key: 'phone',
-                value: e.detail.value
+                phone: e.detail.value
               })
             }}
             maxlength={11}
@@ -63,8 +62,7 @@ export default function LoginForm() {
             placeholder='请输入密码'
             onInput={(e) => {
               setState({
-                key: 'password',
-                value: e.detail.value
+                password: e.detail.value
               })
             }}
             maxlength={16}
@@ -77,8 +75,7 @@ export default function LoginForm() {
               size={24}
               onClick={() => {
                 setState({
-                  key: 'showPassword',
-                  value: !showPassword
+                  showPassword: !showPassword
                 })
               }}
             />
