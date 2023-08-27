@@ -1,0 +1,35 @@
+.user-center {
+  --linearFrom: #ff6348;
+  --linearTo: #ff7f50;
+  .user-center-top {
+    background: linear-gradient(
+      90deg,
+      var(--linearFrom) 0%,
+      var(--linearTo) 100%
+    );
+    border-radius: 0 0 72px 72px;
+    .user-info {
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .user-img-box {
+        margin-right: 24px;
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        .user-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .user-account-box {
+        padding: 20px 0;
+        .user-name {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

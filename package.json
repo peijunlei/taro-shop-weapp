@@ -9,8 +9,8 @@
     "css": "sass"
   },
   "scripts": {
-    "build": "taro build --type weapp",
-    "start": "taro build --type weapp --watch"
+    "build:weapp": "taro build --type weapp",
+    "start": "npm run build:weapp -- --watch"
   },
   "browserslist": [
     "last 3 versions",

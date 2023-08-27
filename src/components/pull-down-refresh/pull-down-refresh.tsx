@@ -144,16 +144,6 @@ function PullDownRefresh(props: PullDownRefreshProps) {
           </View>
           {children}
         </View>
-        {/* {
-          showTop && (
-            <View className='toTop' onClick={() => {
-              setState({ scrollTop: 0 })
-            }}
-            >
-              👆
-            </View>
-          )
-        } */}
       </ScrollView>
     </MyContext.Provider>
   )

@@ -1,0 +1,12 @@
+.goods-list {
+  padding: 0 20px;
+  background-color: #fff;
+  .goods-item {
+    font-size: 24px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 42px;
+    background: linear-gradient(145deg, #ffffff, #e1dddd);
+    box-shadow: 15px 15px 52px #aaa7a7, -15px -15px 52px #ffffff;
+  }
+}

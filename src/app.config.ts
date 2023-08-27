@@ -17,7 +17,7 @@ export default defineAppConfig({
     {
       root:'pages/package-B',
       pages:[
-        'canvas/index',
+        'goods-detail/index',
       ]
     }
   ],

@@ -1,5 +1,5 @@
 import { View, Button, Text, Image, Input } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import Taro, { eventCenter } from '@tarojs/taro';
 import { Cache } from '@/constant/cache';
 
 import IconFont from '@/components/icon-font';
@@ -28,6 +28,7 @@ export default function LoginForm() {
     Taro.setStorageSync(Cache.LOGIN_DATA, result);
     setUserInfo(result)
     Taro.showToast({ title: '登录成功' })
+    eventCenter.trigger('userCenterRefresh')
     setTimeout(() => {
       Taro.navigateBack()
     }, 1000);
