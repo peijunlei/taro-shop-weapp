@@ -1,9 +1,10 @@
 
 
-.login{
-  background-color: #f5f5f5;
-  padding: 0 20px;
+.page{
   .PullDownRefresh{
     height: calc( 100vh - 168px );
+    .login{
+      padding: 0 20px;
+    }
   }
 }
