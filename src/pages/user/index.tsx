@@ -17,18 +17,23 @@ export default function Index() {
   const setState = useUserCenterStore(state => state.setState)
   async function init() {
     if (isLogin()) {
+      Taro.showLoading()
       const res = await findCustomerCenterInfo()
+      Taro.hideLoading()
       setState({ customer: res })
     } else {
       setState({ customer: {} })
     }
   }
-  useEffect(() => {
-    eventCenter.on('userCenterRefresh', () => {
-      init()
-    })
+  // useEffect(() => {
+  //   eventCenter.on('userCenterRefresh', () => {
+  //     init()
+  //   })
+  //   init()
+  // }, [])
+  useDidShow(()=>{
     init()
-  }, [])
+  })
 
   return (
     <View className='user-center'>

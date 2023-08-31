@@ -110,7 +110,6 @@ function PullDownRefresh(props: PullDownRefreshProps) {
     // });
   }
   useEffect(() => {
-    console.log('trigger', trigger);
     if (!trigger) {
       closeRefresh();
     }

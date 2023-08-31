@@ -1,6 +1,7 @@
 import { createWithEqualityFn } from 'zustand/traditional'
 
 interface GoodsListState {
+  loading:boolean;
   goodsList: any[];
   pageNum: number;
   pageSize: number;
@@ -12,9 +13,10 @@ interface GoodsListActions {
   setPageNum: (pageNum: number) => void;
 }
 const defaultState: GoodsListState = {
+  loading:false,
   reload:false,
   pageNum: 0,
-  pageSize: 20,
+  pageSize: 10,
   total: 0,
   goodsList: [],
 };

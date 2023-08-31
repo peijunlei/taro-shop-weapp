@@ -6,7 +6,16 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 42px;
-    background: linear-gradient(145deg, #ffffff, #e1dddd);
     box-shadow: 15px 15px 52px #aaa7a7, -15px -15px 52px #ffffff;
+    .img {
+      width: 100%;
+    }
+    .name{
+      white-space: nowrap;
+      margin-top: 20px;
+      padding: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
 }
