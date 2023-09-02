@@ -6,6 +6,8 @@ import prodConfig from './prod'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig(async (merge, { command, mode }) => {
+  const isDev = mode === 'development';
+  const isProd = !isDev;
   const baseConfig: UserConfigExport = {
     projectName: 'taro-shop-weapp',
     date: '2023-8-25',

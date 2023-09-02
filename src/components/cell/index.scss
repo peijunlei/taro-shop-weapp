@@ -1,0 +1,19 @@
+.my-cell{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  .title{
+    width: 150px;
+    font-size: 28px;
+  }
+  .desc{
+    color: #999;
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .right-icon{
+  }
+}

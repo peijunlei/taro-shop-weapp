@@ -1,0 +1,17 @@
+.my-button {
+  display: flex;
+  font-size: 28px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  padding: 20px;
+  border-radius: 16px;
+  &-default {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+  &-primary {
+    color: #fff;
+    background-color: $primary-color;
+  }
+}

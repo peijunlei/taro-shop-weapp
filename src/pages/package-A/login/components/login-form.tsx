@@ -1,8 +1,7 @@
-import { View, Button, Text, Image, Input } from '@tarojs/components';
+import { View, Text, Image, Input } from '@tarojs/components';
 import Taro, { eventCenter } from '@tarojs/taro';
 import { Cache } from '@/constant/cache';
 
-import IconFont from '@/components/icon-font';
 import phoneIcon from '@/assets/image/login/phone.png';
 import passIcon from '@/assets/image/login/pass.png';
 import useUserInfo from '@/store/useUserInfo';
@@ -12,6 +11,7 @@ import useLoginStore from '../useLoginStore';
 import { LoginWithAccount } from '../webapi';
 import './login-form.scss';
 import { shallow } from 'zustand/shallow';
+import { Button,IconFont } from '@/components';
 
 export default function LoginForm() {
   const { phone, password, setState, pcLogo, showPassword } = useLoginStore(state => ({
@@ -92,9 +92,9 @@ export default function LoginForm() {
           </View>
         </View>
       </View>
-      <View className='submit-btn' onClick={handleSubmmit}  >
+      <Button className='submit-btn' onClick={handleSubmmit} type='primary'  >
         登录
-      </View>
+      </Button>
     </View>
   );
 

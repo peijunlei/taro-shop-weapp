@@ -80,8 +80,16 @@ export function post<T = any>(url, data) {
     data,
   });
 }
+export function del<T = any>(url, data) {
+  return Common<T>({
+    url,
+    method: 'DELETE',
+    data,
+  });
+}
 
 export default {
   get,
   post,
+  del
 }

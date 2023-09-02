@@ -4,8 +4,11 @@ import { Text } from '@tarojs/components'
 import cn from 'classnames'
 import './index.scss'
 
+
+
+export type IconFontValueEnum = 'biyan' | 'eyes' | 'gengduo' | 'loved' | 'love';
 interface IIconProps {
-  value: string;
+  value: IconFontValueEnum;
   onClick?: () => void;
   className?: string;
   color?: string;

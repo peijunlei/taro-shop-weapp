@@ -35,11 +35,11 @@
     "@tarojs/shared": "3.6.14",
     "@tarojs/taro": "3.6.14",
     "base-64": "^1.0.0",
+    "utf8": "^3.0.0",
     "classnames": "^2.3.2",
     "immer": "^10.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "utf8": "^3.0.0",
     "zustand": "^4.4.1"
   },
   "devDependencies": {

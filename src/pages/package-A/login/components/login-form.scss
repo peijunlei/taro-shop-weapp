@@ -47,15 +47,6 @@
   }
   //按钮样式
   .submit-btn {
-    display: flex;
-    height: 72px;
-    color: #fff;
-    background: linear-gradient(90deg, $primaryColor 0%, $primaryColor 100%);
-    border-radius: 36px;
-    font-size: 28px;
-    align-items: center;
-    justify-content: center;
-    margin: 40px 0;
-    font-weight: bold;
+    margin-top: 20px;
   }
 }
