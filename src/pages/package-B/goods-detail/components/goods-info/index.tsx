@@ -44,7 +44,7 @@ function GoodsInfo() {
           </View>
         </View>
         <View className='goods-follow' onClick={toggleGoodsFollow} >
-          <IconFont value={isFollow ? 'loved' : 'love'} className='icon' size={14} color={isFollow ? '#40a9ff' : '#333'} />
+          <IconFont value={isFollow ? 'no-love' : 'love'} className='icon' size={14} color={isFollow ? '#40a9ff' : '#333'} />
           {isFollow ? '已收藏' : "收藏"}
         </View>
       </View>

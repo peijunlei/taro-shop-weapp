@@ -17,7 +17,7 @@ function Cell(props: CellProps) {
   const {
     title,
     desc,
-    rightIcon = 'gengduo',
+    rightIcon = 'ellipsis',
     className,
     onClick
   } = props
