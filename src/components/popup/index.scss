@@ -1,0 +1,74 @@
+@import "../overlay/index.scss";
+
+.nut-popup {
+  position: fixed;
+  max-height: 100%;
+  overflow-y: auto;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+
+  &-head {
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    .title {
+    }
+    .close-icon {
+      position: absolute !important;
+      padding: 10px;
+      right: 20px;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-body {
+    height: calc(100% - 80px);
+  }
+}
+
+.nut-popup-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  &.round {
+    border-radius: 40px 40px 0 0;
+  }
+}
+
+.nut-popup-slide {
+  /* 从底部滑出 */
+  @keyframes popup-slide-bottom-enter {
+    from {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  @keyframes slide-bottom-exit {
+    to {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  &-bottom-enter-active,
+  &-bottom-appear-active {
+    transform: translate(0, 0);
+    animation-fill-mode: both;
+    animation-name: popup-slide-bottom-enter;
+    animation-duration: 0.3s;
+  }
+
+  &-bottom-exit {
+    animation-fill-mode: both;
+    animation-name: slide-bottom-exit;
+    animation-duration: 0.3s;
+  }
+
+  .nut-overflow-hidden {
+    overflow: hidden !important;
+  }
+}

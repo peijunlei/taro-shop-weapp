@@ -17,6 +17,7 @@ function GoodsSwiper() {
         images.map((item, index) => (
           <SwiperItem key={index} >
             <Image
+              mode='aspectFit'
               className='swiper-img'
               src={item.artworkUrl}
             />

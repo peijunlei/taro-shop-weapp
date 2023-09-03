@@ -12,6 +12,7 @@ import GoodsInfo from "./components/goods-info";
 import GoodsSpec from "./components/goods-spec";
 import './index.scss';
 import GoodsAddress from "./components/address";
+import SpecModal, { SpecOpenTypeTypeEnum } from "@/pages/commonComp/spec-modal";
 
 function Index() {
   const [refresh, setRefresh] = useState(false)
@@ -19,11 +20,12 @@ function Index() {
   const { params } = useRouter<{ skuId: string }>()
   const setState = useGoodsDetail(state => state.setState)
   const initIsFollow = useGoodsDetail(state => state.initIsFollow)
-  const { goodsSpecDetails } = useGoodsDetail(state => ({
+  const { specVisible, goodsInfo } = useGoodsDetail(state => ({
     goodsSpecDetails: state.goodsSpecDetails,
+    specVisible: state.specVisible,
+    goodsInfo: state.goodsInfo,
 
   }), shallow)
-  const systemInfo = useGlobalStore(state => state.systemInfo)
 
   function onPullDownRefresh() {
     init()
@@ -51,24 +53,33 @@ function Index() {
     setState({ skuId: params.skuId })
     init()
   }, [])
+
   return (
-    <PullDownRefresh
-      className='PullDownRefresh'
-      trigger={refresh}
-      onTriggerChange={(val) => {
-        setRefresh(val)
-      }}
-      onPullDownRefresh={onPullDownRefresh}
-    >
-      <View className='goods-detail'>
-        <View className='goods-detail-top'>
-          <GoodsSwiper />
+    <>
+      <PullDownRefresh
+        className='PullDownRefresh'
+        trigger={refresh}
+        onTriggerChange={(val) => {
+          setRefresh(val)
+        }}
+        onPullDownRefresh={onPullDownRefresh}
+      >
+        <View className='goods-detail'>
+          <View className='goods-detail-top'>
+            <GoodsSwiper />
+          </View>
+          <GoodsInfo />
+          <GoodsSpec />
+          <GoodsAddress />
         </View>
-        <GoodsInfo />
-        <GoodsSpec />
-        <GoodsAddress />
-      </View>
-    </PullDownRefresh>
+      </PullDownRefresh>
+      <SpecModal
+        goodsInfo={goodsInfo}
+        visible={specVisible}
+        openType={SpecOpenTypeTypeEnum.GOODS_SPEC}
+        onClose={() => setState({ specVisible: false })}
+      />
+    </>
   )
 }
 

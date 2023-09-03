@@ -1,0 +1,14 @@
+.spec-modal {
+  height: 100%;
+  padding: 20px;
+  padding-top: 0;
+  .spec-top {
+    display: flex;
+    align-items: flex-end;
+    .img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+    }
+  }
+}

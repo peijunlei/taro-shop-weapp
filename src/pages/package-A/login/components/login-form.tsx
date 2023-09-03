@@ -73,7 +73,7 @@ export default function LoginForm() {
           />
           <View className='r-btn'>
             <IconFont
-              value={showPassword ? 'eyes' : 'biyan'}
+              value={showPassword ? 'eyes' : 'close-eyes'}
               size={24}
               onClick={() => {
                 setState({

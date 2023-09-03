@@ -1,3 +1,4 @@
 $primary-color: #40a9ff;
 $linear-from: #91d5ff;
 $linear-to: #1b64b3;
+$overlay-zIndex: var(--my-overlay-zIndex, 1000) !default;

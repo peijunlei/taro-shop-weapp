@@ -6,7 +6,7 @@ import './index.scss'
 
 
 
-export type IconFontValueEnum = 'biyan' | 'eyes' | 'ellipsis' | 'no-love' | 'love';
+export type IconFontValueEnum = 'close-eyes' | 'eyes' | 'ellipsis' | 'no-love' | 'love' | 'close';
 interface IIconProps {
   value: IconFontValueEnum;
   onClick?: () => void;
@@ -31,7 +31,6 @@ function IconFont(props: IIconProps) {
       className={cn(prefixClass, iconName, className)}
       style={rootStyle}
       onClick={(e) => {
-        e.stopPropagation()
         onClick?.()
       }}
     />
