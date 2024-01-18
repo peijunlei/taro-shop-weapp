@@ -30,3 +30,10 @@ declare namespace NodeJS {
   }
 }
 
+declare const AMap: {
+  [key: string]: any
+}
+interface ILocation {
+  lng: number;
+  lat: number;
+}

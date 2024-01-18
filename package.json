@@ -10,7 +10,9 @@
   },
   "scripts": {
     "build:weapp": "taro build --type weapp",
-    "start": "npm run build:weapp -- --watch"
+    "build:h5": "taro build --type h5",
+    "start": "npm run build:weapp -- --watch",
+    "start:h5": "npm run build:h5 -- --watch"
   },
   "browserslist": [
     "last 3 versions",
@@ -37,6 +39,7 @@
     "base-64": "^1.0.0",
     "classnames": "^2.3.2",
     "immer": "^10.0.2",
+    "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-transition-group": "^4.4.5",
@@ -54,6 +57,7 @@
     "@types/jest": "^29.3.1",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.0",
+    "@types/sass": "1.43.1",
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",

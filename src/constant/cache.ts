@@ -1,6 +1,9 @@
-export const Cache = {
+ const cache = {
   LOGIN_DATA: 'login_data',
-  TOKEN:'token'
+  TOKEN:'token',
+  CURRENT_POSITION:'current_position',
 }
+
+export default cache
 
 

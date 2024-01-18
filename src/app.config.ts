@@ -5,18 +5,19 @@ export default defineAppConfig({
     'pages/reward/index',
     'pages/shopcart/index',
     'pages/user/index',
-
   ],
   subpackages:[
     {
       root:'pages/package-A',
       pages:[
-        'login/index',
+        'about/index',
+        'select-map/index'
       ]
     },
     {
       root:'pages/package-B',
       pages:[
+        'goods-list/index',
         'goods-detail/index',
       ]
     }
