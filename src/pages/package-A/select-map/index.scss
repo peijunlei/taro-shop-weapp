@@ -1,6 +1,30 @@
-
-
-#map{
+#address_map {
   width: 100%;
-  height: 640px;
+  height: 50vh;
+}
+.address {
+  .icon {
+    position: absolute;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+  }
+  &_list {
+    height: 50vh;
+    .item {
+      padding: 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #333;
+      &_name {
+        color: $primary-color;
+      }
+      &_address {
+        color: #ccc;
+        font-size: 32px;
+      }
+    }
+  }
 }

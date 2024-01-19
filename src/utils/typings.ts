@@ -6,8 +6,3 @@ export interface BasicComponent {
   children?: ReactNode
   id?: string
 }
-
-export const ComponentDefaults = {
-  className: '',
-  style: {},
-}

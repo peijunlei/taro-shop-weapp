@@ -1,4 +1,4 @@
-import { Cache } from "@/constant/cache";
+import cache from '@/constant/cache'
 import Taro from "@tarojs/taro";
 
 export const isFunction = (value: unknown): value is (...args: any) => any =>
@@ -10,5 +10,5 @@ export function getRandomInt(min, max) {
 }
 
 export function isLogin() {
-  return Boolean(Taro.getStorageSync(Cache.TOKEN))
+  return Boolean(Taro.getStorageSync(cache.TOKEN))
 }
