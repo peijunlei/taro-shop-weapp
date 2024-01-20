@@ -108,17 +108,36 @@ export function PlaceSearch(params: PlaceSearchParams) {
   return new Promise((resolve, reject) => {
     AMap.plugin("AMap.PlaceSearch", function () {
       let placeSearch = new AMap.PlaceSearch({
-        pageSize:20,
+        pageSize: 20,
       });
       let cpoint = [lnglat.lng, lnglat.lat]; //中心点坐标
       placeSearch.searchNearBy(keyword, cpoint, 1000, function (status, result) {
         //查询成功时，result 即对应匹配的 POI 信息
         if (status === "complete" && result.info === "OK") {
           resolve(result.poiList.pois)
-        }else{
+        } else {
           resolve([])
         }
       });
     });
+  })
+}
+interface CityInfo {
+  cityName: string;
+  cityCode: string;
+}
+export function CitySearch() {
+  return new Promise<CityInfo>((resolve, reject) => {
+    AMap.plugin('AMap.CitySearch', function () {
+      const citySearch = new AMap.CitySearch()
+      citySearch.getLocalCity(function (status, result) {
+        if (status === 'complete' && result.info === 'OK') {
+          console.log('当前城市信息', result)
+          resolve({ cityName: result.city || result.province, cityCode: result.adcode })
+        } else {
+          reject()
+        }
+      })
+    })
   })
 }

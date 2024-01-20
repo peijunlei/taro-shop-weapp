@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Taro from '@tarojs/taro'
 
 import './index.scss'
-import { Geocoder, getGaodeLocation, getLocationBrowser } from '@/utils/amp-service'
+import { CitySearch, Geocoder, getGaodeLocation, getLocationBrowser } from '@/utils/amp-service'
 
 export default function Index() {
   const [location, setlocation] = useState({ lng: 0, lat: 0 })
@@ -21,6 +21,9 @@ export default function Index() {
     Taro.setStorageSync(cache.CURRENT_CITY, { cityName: result.cityName, cityCode: result.cityCode })
   }
   useEffect(() => {
+    CitySearch().then(res => {
+      console.log(res)
+    })
   }, [])
   return (
     <View>
