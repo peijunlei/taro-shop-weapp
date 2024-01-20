@@ -8,7 +8,8 @@ export function getRandomInt(min, max) {
   // 生成min到max之间的随机整数
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+export const isH5 = __TARO_ENV__ === 'h5'
+export const isWeapp = __TARO_ENV__ === 'weapp'
 export function isLogin() {
   return Boolean(Taro.getStorageSync(cache.TOKEN))
 }

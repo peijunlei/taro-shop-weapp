@@ -6,17 +6,18 @@ export default defineAppConfig({
     'pages/shopcart/index',
     'pages/user/index',
   ],
-  subpackages:[
+  subpackages: [
     {
-      root:'pages/package-A',
-      pages:[
+      root: 'pages/package-A',
+      pages: [
         'about/index',
-        'select-map/index'
+        'select-map/index',
+        'select-weapp-map/index'
       ]
     },
     {
-      root:'pages/package-B',
-      pages:[
+      root: 'pages/package-B',
+      pages: [
         'goods-list/index',
         'goods-detail/index',
       ]
@@ -65,4 +66,5 @@ export default defineAppConfig({
       }
     ]
   },
+  requiredPrivateInfos:["getLocation"]
 })

@@ -1,3 +1,5 @@
+import Taro from "@tarojs/taro";
+
 /**
  * 高德定位
  * @returns 
@@ -68,18 +70,18 @@ export function getLocationBrowser() {
 
 }
 
-
+interface IGeocoderRes {
+  formattedAddress: string,
+  cityName: string,
+  cityCode: string,
+}
 /**
  * 逆地理编码
  * @param params 
  * @returns 
  */
 export function Geocoder(params: ILocation) {
-  return new Promise<{
-    formattedAddress: string,
-    cityName: string,
-    cityCode: string,
-  }>((resolve, reject) => {
+  return new Promise<IGeocoderRes>((resolve, reject) => {
     AMap.plugin('AMap.Geocoder', function () {
       let geocoder = new AMap.Geocoder()
       const lnglat = [params.lng, params.lat]
@@ -138,6 +140,61 @@ export function CitySearch() {
           reject()
         }
       })
+    })
+  })
+}
+
+
+
+export function getAroundList(params: ILocation) {
+  return new Promise<any[]>((resolve, reject) => {
+    const lnglat = `${params.lng.toFixed(6)},${params.lat.toFixed(6)}`
+    Taro.request({
+      url: 'https://restapi.amap.com/v5/place/around',
+      data: {
+        key: '2ec3645821da5b5b988e8943267abdba',
+        types: '餐饮服务|购物服务|生活服务|公司企业|商务住宅|公共设施',
+        location: lnglat,
+        page_size: 25
+      },
+      success: (res: any) => {
+        const data = res.data
+        if (data.status === '1' && data.info === 'OK') {
+          resolve(data.pois)
+        } else {
+          reject()
+        }
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })
+  })
+}
+export function getRegeo(params: ILocation) {
+  return new Promise<IGeocoderRes>((resolve, reject) => {
+    const lnglat = `${params.lng.toFixed(6)},${params.lat.toFixed(6)}`
+    Taro.request({
+      url: 'https://restapi.amap.com/v3/geocode/regeo',
+      data: {
+        key: '2ec3645821da5b5b988e8943267abdba',
+        location: lnglat,
+      },
+      success: (res: any) => {
+        const data = res.data
+        if (data.status === '1' && data.info === 'OK') {
+          resolve({
+            formattedAddress: data.regeocode.formatted_address,
+            cityName: data.regeocode.addressComponent.city,
+            cityCode: data.regeocode.addressComponent.adcode.slice(0, 4) + "00",
+          })
+        } else {
+          reject()
+        }
+      },
+      fail: (err) => {
+        reject(err)
+      }
     })
   })
 }

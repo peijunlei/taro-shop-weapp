@@ -33,6 +33,7 @@ declare namespace NodeJS {
 declare const AMap: {
   [key: string]: any
 }
+declare const __TARO_ENV__: NodeJS.ProcessEnv['TARO_ENV']
 interface ILocation {
   lng: number;
   lat: number;
