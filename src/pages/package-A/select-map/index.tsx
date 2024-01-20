@@ -44,8 +44,10 @@ export default function About() {
   return (
     <View className='address'>
       {/* <Search></Search> */}
-      <View id='address_map' />
-      <Image src={locationIcon} className='icon' />
+      <View className='map_wrapper'>
+        <View id='address_map' />
+        <Image src={locationIcon} className='icon' />
+      </View>
       <ScrollView scrollY className='address_list'>
         {
           data.map((item, index) => (
