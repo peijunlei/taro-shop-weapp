@@ -57,7 +57,7 @@ export default function NavigationBar(props: NavigationBarProps) {
           }
         </View>
         <View className='center'>
-          <Text>{title}</Text>
+          <View>{title}</View>
         </View>
       </View>
     </View >

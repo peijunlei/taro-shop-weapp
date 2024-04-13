@@ -66,5 +66,6 @@ export default defineAppConfig({
       }
     ]
   },
+ 
   requiredPrivateInfos:["getLocation"]
 })
