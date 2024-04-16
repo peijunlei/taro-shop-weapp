@@ -1,5 +1,5 @@
 import Const from "@/constant/Const";
-import { Cache } from "@/constant/cache";
+import Cache from "@/constant/cache";
 import Taro from "@tarojs/taro";
 
 const host = process.env.TARO_APP_API;
@@ -37,6 +37,7 @@ async function Common<T = object>(params: IFetch): Promise<AsyncResult<T>> {
     // 'Access-Control-Allow-Origin': '*',
     Authorization: 'Bearer ' + token || '',
     'distribute-channel': JSON.stringify(distributeChannel),
+    terminal: 'H5',
   };
   return new Promise((resolve, reject) => {
     Taro.request({
@@ -87,9 +88,16 @@ export function del<T = any>(url, data) {
     data,
   });
 }
-
+export function put<T = any>(url, data) {
+  return Common<T>({
+    url,
+    method: 'PUT',
+    data,
+  });
+}
 export default {
   get,
   post,
-  del
+  del,
+  put
 }

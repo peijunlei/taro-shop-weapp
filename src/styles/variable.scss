@@ -1,4 +1,14 @@
 $primary-color: #40a9ff;
 $linear-from: #91d5ff;
 $linear-to: #1b64b3;
+$price-color:#f60;
 $overlay-zIndex: var(--my-overlay-zIndex, 1000) !default;
+
+// 限制文字显示行数2
+@mixin clamp($line: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

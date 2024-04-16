@@ -1,0 +1,17 @@
+.goods_evaluation {
+  padding: 24px;
+  background-color: #fff;
+  .goods_evaluation_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      font-size: 28px;
+      width: 60px;
+      margin-right: 24px;
+      color: rgba($color: #000000, $alpha: 0.8);
+    }
+  }
+  .goods_evaluation_list {
+  }
+}

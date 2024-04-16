@@ -1,0 +1,16 @@
+
+.scrollview{
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px;
+  .goods_item{
+    width: calc(50% - 12px);
+    background-color: #fff;
+    margin-right: 12px;
+    &:nth-child(2n){
+      margin-right: 0;
+      margin-left: 12px;
+    }
+  }
+}

@@ -70,12 +70,6 @@ export default defineConfig(async (merge, { command, mode }) => {
       }
     },
     h5: {
-      devServer:{
-        port: 3000,
-        client:{
-          overlay:false
-        }
-      },
       publicPath: '/',
       staticDirectory: 'static',
       output: {

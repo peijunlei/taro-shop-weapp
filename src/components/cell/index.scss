@@ -1,18 +1,19 @@
-.my-cell{
+.pjl-cell{
   display: flex;
   align-items: center;
   background: #fff;
-  padding: 20px;
+  height: 96px;
+  padding: 0 24px;
+  font-size: 28px;
   .title{
-    width: 150px;
-    font-size: 28px;
+    width: 60px;
+    margin-right: 24px;
+    color: rgba($color: #000000, $alpha: .8);
   }
   .desc{
     color: #999;
     flex: 1;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    @include clamp(1);
   }
   .right-icon{
   }

@@ -1,0 +1,53 @@
+.goods_info {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 24px;
+  min-height: 280px;
+  .row {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.line {
+      background-color: #f5f5f5;
+    }
+  }
+  .goods_label_list {
+    display: flex;
+    align-items: center;
+    .goods_label {
+      line-height: 1;
+      font-size: 24px;
+      min-height: 20 * 2px;
+      color: #fff;
+      padding: 8px;
+      border-radius: 8px;
+      margin-right: 8px;
+      background: linear-gradient(90deg, #f66 0, #ff0a0a 100%);
+      &.line {
+        min-width: 112px;
+        background: #f5f5f5;
+      }
+    }
+  }
+
+  .goodsName {
+    font-size: 32px;
+    font-weight: bold;
+    min-height: 25.6 * 2px;
+    color: #333;
+    // 限制文字显示行数2
+    @include clamp(2);
+    &.line {
+      width: 60%;
+    }
+  }
+  .goodsSubtitle {
+    font-size: 28px;
+    min-height: 22.4 * 2px;
+    color: #999;
+    &.line {
+      width: 40%;
+    }
+  }
+}

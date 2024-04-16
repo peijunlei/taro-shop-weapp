@@ -1,0 +1,20 @@
+.hairBorderBox {
+  position: relative;
+  overflow: hidden;
+}
+
+.hairBorderBox .content {
+  position: relative;
+  z-index: 1;
+}
+
+.hairBorderBox .hairBorder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  zoom: 0.5;
+  pointer-events: none;
+  z-index: 999;
+}

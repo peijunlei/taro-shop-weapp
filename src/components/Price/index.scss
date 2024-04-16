@@ -1,0 +1,11 @@
+.pjl_price {
+  color: $price-color;
+  display: flex;
+  align-items: baseline;
+  .pjl_price_unit {
+    font-size: 24px;
+  }
+  .pjl_price_decimal {
+    font-size: 48px;
+  }
+}

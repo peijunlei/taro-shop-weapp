@@ -19,7 +19,7 @@ import './index.scss'
 type Teleport = HTMLElement | (() => HTMLElement) | null
 
 export interface PopupProps extends OverlayProps {
-  position: string
+  position: 'top' | 'bottom' | 'left' | 'right'
   transition: string
   overlayStyle: React.CSSProperties
   overlayClassName: string
@@ -85,7 +85,7 @@ const Popup: FunctionComponent<
   const [index, setIndex] = useState(zIndex || _zIndex)
   const [innerVisible, setInnerVisible] = useState(visible)
 
-  const classPrefix = 'nut-popup'
+  const classPrefix = 'pjl-popup'
   const baseStyle = {
     zIndex: index,
   }
@@ -117,7 +117,6 @@ const Popup: FunctionComponent<
   }
 
   const close = () => {
-    console.log(innerVisible);
     if (innerVisible) {
       setInnerVisible(false)
       onClose && onClose()

@@ -1,4 +1,4 @@
-.nut-overlay {
+.pjl-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,12 +8,12 @@
   z-index: 9;
 }
 
-.nut-overflow-hidden {
+.pjl-overflow-hidden {
   overflow: hidden !important;
 }
 
-.nut-overlay-slide {
-  @keyframes nut-fade-in {
+.pjl-overlay-slide {
+  @keyframes pjl-fade-in {
     0% {
       opacity: 0;
     }
@@ -22,7 +22,7 @@
     }
   }
 
-  @keyframes nut-fade-out {
+  @keyframes pjl-fade-out {
     0% {
       opacity: 1;
     }
@@ -34,13 +34,13 @@
   &-enter-active,
   &-appear-active {
     animation-fill-mode: both;
-    animation-name: nut-fade-in;
+    animation-name: pjl-fade-in;
     animation-duration: 0.3s;
   }
 
   &-exit-active {
     animation-fill-mode: both;
-    animation-name: nut-fade-out;
+    animation-name: pjl-fade-out;
     animation-duration: 0.3s;
   }
 }

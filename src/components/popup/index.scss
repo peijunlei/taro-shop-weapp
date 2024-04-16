@@ -1,7 +1,8 @@
 @import "../overlay/index.scss";
 
-.nut-popup {
+.pjl-popup {
   position: fixed;
+  min-height: 30vh;
   max-height: 100%;
   overflow-y: auto;
   background-color: #fff;
@@ -15,6 +16,7 @@
     justify-content: center;
     background-color: #fff;
     .title {
+      font-size: 32px;
     }
     .close-icon {
       position: absolute !important;
@@ -31,7 +33,7 @@
   }
 }
 
-.nut-popup-bottom {
+.pjl-popup-bottom {
   bottom: 0;
   left: 0;
   width: 100%;
@@ -40,7 +42,8 @@
   }
 }
 
-.nut-popup-slide {
+
+.pjl-popup-slide {
   /* 从底部滑出 */
   @keyframes popup-slide-bottom-enter {
     from {
@@ -67,8 +70,34 @@
     animation-name: slide-bottom-exit;
     animation-duration: 0.3s;
   }
+  // 从顶部滑出
+  @keyframes popup-slide-top-enter {
+    from {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
 
-  .nut-overflow-hidden {
+  @keyframes slide-top-exit {
+    to {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+
+
+  &-top-enter-active,
+  &-top-appear-active {
+    transform: translate(0, 0);
+    animation-fill-mode: both;
+    animation-name: popup-slide-top-enter;
+    animation-duration: 0.3s;
+  }
+
+  &-top-exit {
+    animation-fill-mode: both;
+    animation-name: slide-top-exit;
+    animation-duration: 0.3s;
+  }
+  .pjl-overflow-hidden {
     overflow: hidden !important;
   }
 }

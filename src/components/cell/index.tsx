@@ -10,7 +10,8 @@ import IconFont, { IconFontValueEnum } from "../icon-font";
 interface CellProps extends ViewProps {
   title: string;
   desc?: string;
-  rightIcon?: IconFontValueEnum
+  rightIcon?: IconFontValueEnum;
+  style?: React.CSSProperties;
 }
 function Cell(props: CellProps) {
 
@@ -19,10 +20,11 @@ function Cell(props: CellProps) {
     desc,
     rightIcon = 'ellipsis',
     className,
-    onClick
+    onClick,
+    style
   } = props
   return (
-    <View className={cn('my-cell', className)} onClick={onClick}>
+    <View className={cn('pjl-cell', className)} onClick={onClick} style={style}>
       <View className='title'>
         {title}
       </View>

@@ -1,0 +1,95 @@
+.goods_specs_popup {
+  max-height: 60vh;
+  .row {
+  }
+  .up_body {
+    padding: 24px;
+    height: calc(100% - 120px);
+  }
+  .info {
+    display: flex;
+    align-items: flex-end;
+    .img {
+      width: 200px;
+      height: 200px;
+      margin-right: 24px;
+    }
+  }
+  .specs {
+    margin-top: 24px;
+    max-height: calc(100% - 260px);
+    .spec_item {
+      .spec_name {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 24px;
+      }
+      .spec_detail {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        .spec_detail_item {
+          padding: 4px 30px;
+          margin-right: 24px;
+          font-size: 28px;
+          color: #262626;
+          background-color: #f2f2f2;
+          position: relative;
+          &.active {
+            background-color: #fcedeb;
+            border-color: #f2270c;
+            color: #f2270c;
+          }
+        }
+      }
+    }
+  }
+  .purchase {
+    height: 60px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .stock {
+      margin-left: 24px;
+      font-size: 24px;
+      color: #999;
+    }
+  }
+  .bottoms {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    .bottom_item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      height: 79px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 24px;
+      &.add_cart {
+        background: linear-gradient(
+          135deg,
+          rgb(242, 20, 12),
+          rgb(242, 39, 12) 70%,
+          rgb(242, 77, 12)
+        );
+      }
+      &.buy_now {
+        margin-right: 0;
+        background: linear-gradient(
+          135deg,
+          rgb(255, 186, 13),
+          rgb(255, 195, 13) 69%,
+          rgb(255, 207, 13)
+        );
+      }
+    }
+  }
+}

@@ -33,7 +33,7 @@ const Overlay: FunctionComponent<
 
   const [innerVisible, setInnerVisible] = useState(visible)
 
-  const classPrefix = `nut-overlay`
+  const classPrefix = `pjl-overlay`
 
   useEffect(() => {
     if (visible) {
