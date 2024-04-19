@@ -1,7 +1,9 @@
 .goods_list_filter {
   position: relative;
   .filter_list {
-    height: 100px;
+    position: relative;
+    z-index: 11;
+    height: 80px;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -13,63 +15,17 @@
       font-size: 28px;
       color: #333;
       height: 100%;
+      .filter_icon{
+        margin-left: 8px;
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s;
+        &.active{
+          transform: rotate(180deg);
+        }
+      }
       &.active {
-        color: #f2270c;
-      }
-    }
-  }
-  .pop_wrapper {
-    width: 100%;
-    height: calc(100vh - 100px);
-    position: absolute;
-    top: 100px;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    &.fade-in {
-      animation-name: fade-in;
-      animation-duration: 0.3s;
-      animation-iteration-count: 1;
-      animation-delay: 0s;
-    }
-    &.fade-out {
-      animation-name: fade-out;
-      animation-duration: 0.5s;
-      animation-iteration-count: 1;
-      animation-delay: 0s;
-
-    }
-    .pop {
-      background-color: #fff;
-      border-radius: 0 0 20px 20px;
-      .pop_item {
-        width: 100%;
-        height: 80px;
-        text-align: center;
-        line-height: 80px;
-        font-size: 24px;
-        color: #333;
-      }
-    }
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    @keyframes fade-out {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 0;
+        color: $theme-color;
       }
     }
   }

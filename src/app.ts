@@ -2,7 +2,7 @@ import Taro, { useLaunch } from '@tarojs/taro'
 import { PropsWithChildren } from 'react'
 import useGlobalStore from './store/useGlobalStore'
 import cache  from './constant/cache'
-import './app.scss'
+import './app.css'
 
 function App({ children }: PropsWithChildren<any>) {
   const setSystemInfo = useGlobalStore(state => state.setSystemInfo)

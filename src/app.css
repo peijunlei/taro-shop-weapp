@@ -1,0 +1,9 @@
+@import './styles/base.css';
+
+:root,page{
+  --theme-color: #f2270c;
+}
+view,
+scroll-view {
+  box-sizing: border-box;
+}

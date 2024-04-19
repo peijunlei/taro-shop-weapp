@@ -9,16 +9,16 @@ function GoodsInfo() {
   const { goods, goodsInfo,loading } = useGoodsDetails((state) => state);
   let { goodsName, goodsSubtitle, goodsLabelList } = goods;
   const { marketPrice } = goodsInfo;
-  goodsLabelList = !loading ? goodsLabelList : Array.from({ length: 5 }, () => ({ labelName: '' })) as GoodsType['goodsLabelList']
+  goodsLabelList = !loading ? (goodsLabelList??[]) : Array.from({ length: 5 }, () => ({ labelName: '' })) as GoodsType['goodsLabelList']
   return (
     <View className='goods_info'>
       <View className='row'>
-        <Price price={marketPrice} />
+        <Price price={marketPrice} large />
       </View>
       <View className='row goods_label_list'>
         {
-          goodsLabelList.map((item) => {
-            return <View key={item.goodsLabelId} className={cn('goods_label', { line: loading })}>{item.labelName}</View>;
+          goodsLabelList.map((item,index) => {
+            return <View key={index} className={cn('goods_label', { line: loading })}>{item.labelName}</View>;
           })
         }
       </View>

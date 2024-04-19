@@ -37,8 +37,8 @@
           position: relative;
           &.active {
             background-color: #fcedeb;
-            border-color: #f2270c;
-            color: #f2270c;
+            color: $theme-color;
+            border-color: currentColor;
           }
         }
       }
@@ -74,21 +74,11 @@
       font-weight: bold;
       margin-right: 24px;
       &.add_cart {
-        background: linear-gradient(
-          135deg,
-          rgb(242, 20, 12),
-          rgb(242, 39, 12) 70%,
-          rgb(242, 77, 12)
-        );
+        background:$gradient;
       }
       &.buy_now {
         margin-right: 0;
-        background: linear-gradient(
-          135deg,
-          rgb(255, 186, 13),
-          rgb(255, 195, 13) 69%,
-          rgb(255, 207, 13)
-        );
+        background:$gradient3;
       }
     }
   }

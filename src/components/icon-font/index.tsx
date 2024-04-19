@@ -6,7 +6,7 @@ import './index.scss'
 
 
 
-export type IconFontValueEnum = 'close-eyes' | 'eyes' | 'ellipsis' | 'no-love' | 'love' | 'close' |'up'|'down'|'left'|'right';
+export type IconFontValueEnum = 'jiahao'|'close-eyes' | 'eyes' | 'ellipsis' | 'no-love' | 'love' | 'close' |'up'|'down'|'left'|'right';
 interface IIconProps {
   value: IconFontValueEnum;
   onClick?: () => void;

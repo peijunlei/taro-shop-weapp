@@ -1,8 +1,11 @@
 $primary-color: #40a9ff;
-$linear-from: #91d5ff;
-$linear-to: #1b64b3;
-$price-color:#f60;
-$overlay-zIndex: var(--my-overlay-zIndex, 1000) !default;
+$linear-from: #f2140c;
+$linear-to: #f24d0c;
+$theme-color: #f2270c;
+
+$gradient: linear-gradient(135deg, $linear-from, $theme-color 70%, $linear-to);
+$gradient2: linear-gradient(135deg, $linear-from, $linear-to);
+$gradient3: linear-gradient(135deg,#ffba0d,#ffc30d 70%,#ffcf0d);
 
 // 限制文字显示行数2
 @mixin clamp($line: 1) {

@@ -23,7 +23,7 @@ function Specifications() {
     setShowSpec(true)
   }
   return (
-    <Cell title='规格' desc={str} style={{ marginBottom: pxTransform(24) }} onClick={hancleClick} />
+    <Cell title='规格' desc={str||'无'} style={{ marginBottom: pxTransform(24) }} onClick={hancleClick} />
   );
 }
 

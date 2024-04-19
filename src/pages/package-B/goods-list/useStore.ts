@@ -1,5 +1,5 @@
+import { EsGoodsItem } from "types/goods";
 import { create } from "zustand";
-import { GoodsInfoItem } from "./types";
 
 interface GoodsListState {
   loading: boolean;
@@ -9,7 +9,7 @@ interface GoodsListState {
     pageSize: number;
     keywords: string;
   };
-  goods: GoodsInfoItem[];
+  goods: EsGoodsItem[];
   total: number;
 }
 interface GoodsListActions {

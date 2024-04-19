@@ -14,7 +14,14 @@ function useData() {
     setLoading(true);
     const result = await fetchGoodsSpuList(requestParams)
     console.log('res', result);
-    setGoods(result.esGoods.content);
+    const goods = result.esGoods.content.map(v => {
+      const goodsInfo = v.goodsInfos.sort((a, b) => a.marketPrice - b.marketPrice)[0]
+      return {
+        ...v,
+        goodsInfo
+      }
+    })
+    setGoods(goods);
     setTotal(result.esGoods.total);
   }
 

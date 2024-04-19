@@ -1,7 +1,9 @@
-import { View, Text, Button, Image, ScrollView, ViewProps, GridView } from '@tarojs/components'
+import { View, Text, Image, ScrollView, ViewProps, GridView } from '@tarojs/components'
 import { ComponentType, useEffect, useRef, useState } from 'react'
 
 import { getRandomInt } from '@/utils'
+
+import { Button } from '@nutui/nutui-react-taro'
 import './index.scss'
 import Taro from '@tarojs/taro'
 
@@ -14,7 +16,7 @@ export default function Index() {
   return (
     <View>
       goods
-      <Button onClick={
+      <Button type='primary' onClick={
         () => {
           Taro.preload({
             images:[]

@@ -11,6 +11,7 @@ import InputNumber from "@/components/input-number";
 import ViewBox from "@/components/box";
 import { GoodsInfoType, goodsSpecsType } from "../../types";
 import Taro from "@tarojs/taro";
+import defaultImg from '@/assets/image/common/goods_none.png'
 
 interface GoodsSpecsPopupProps {
   goodsInfo: GoodsInfoType;
@@ -37,7 +38,7 @@ function GoodsSpecsPopup(props: GoodsSpecsPopupProps) {
       <View className='goods_specs_popup'>
         <View className='up_body'>
           <View className='row info'>
-            <Image src={goodsInfo.goodsInfoImg} className='img' onClick={handlePreview} />
+            <Image src={goodsInfo.goodsInfoImg||defaultImg} className='img' onClick={handlePreview} />
             <Price price={goodsInfo.marketPrice} />
           </View>
           <ScrollView className='row specs' scrollY>

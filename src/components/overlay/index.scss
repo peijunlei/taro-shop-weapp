@@ -8,39 +8,36 @@
   z-index: 9;
 }
 
-.pjl-overflow-hidden {
-  overflow: hidden !important;
-}
 
 .pjl-overlay-slide {
-  @keyframes pjl-fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  // @keyframes fade-in {
+  //   0% {
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //   }
+  // }
 
-  @keyframes pjl-fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+  // @keyframes fade-out {
+  //   0% {
+  //     opacity: 1;
+  //   }
+  //   100% {
+  //     opacity: 0;
+  //   }
+  // }
 
   &-enter-active,
   &-appear-active {
     animation-fill-mode: both;
-    animation-name: pjl-fade-in;
+    animation-name: fade-in;
     animation-duration: 0.3s;
   }
 
   &-exit-active {
     animation-fill-mode: both;
-    animation-name: pjl-fade-out;
+    animation-name: fade-out;
     animation-duration: 0.3s;
   }
 }
